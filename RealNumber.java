@@ -1,6 +1,6 @@
 public class RealNumber{
   public static void main(String args[]){
-    
+
   }
   private double value;
 
@@ -21,7 +21,7 @@ public class RealNumber{
       return true;
     }else if(getValue() == 0 || other.getValue() == 0){
       return false;
-    }if(getValue() / other.getValue() <= 0.00001 || other.getValue() / getValue() <= 0.00001){
+    }else if((getValue() - other.getValue())/getValue() <= 0.00001 || (other.getValue() - getValue())/getValue() <= 0.00001){
       return true;
     }
     return false;
