@@ -72,6 +72,13 @@ public class RationalNumber extends RealNumber{
     if(gcd(getNumerator(), getDenominator()) != 0){
     numerator = getNumerator()/gcd(getNumerator(), getDenominator());
     denominator = getDenominator()/gcd(nume, getDenominator());
+    if (denominator < 0 && numerator < 0){
+      denominator = Math.abs(denominator);
+      numerator = Math.abs(numerator);
+    }else if (denominator < 0){
+      denominator = Math.abs(denominator);
+      numerator = numerator * -1;
+    }
   }
 }
 
