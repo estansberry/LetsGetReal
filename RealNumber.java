@@ -19,13 +19,14 @@ public class RealNumber{
   public boolean equals(RealNumber other){
     if(getValue() == 0 && other.getValue() == 0){
       return true;
-    }else if(getValue() == 0 || other.getValue() == 0){
+    }if(getValue() == 0 || other.getValue() == 0){
       return false;
-    }else if((getValue() - other.getValue())/getValue() <= 0.00001 || (other.getValue() - getValue())/getValue() <= 0.00001){
+    }if(Math.abs((getValue() - other.getValue())/getValue()) <= 0.00001){
       return true;
-    }
-    return false;
+    }else{
+      return false;
   }
+}
 
   public RealNumber add(RealNumber other){
     RealNumber newval = new RealNumber(getValue() + other.getValue());
