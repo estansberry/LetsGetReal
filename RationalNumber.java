@@ -82,10 +82,9 @@ public class RationalNumber extends RealNumber{
   }
 
   public RationalNumber divide(RationalNumber other){
-    int newnume = getNumerator() * other.getDenominator();
-    int newdeno = getDenominator() * other.getNumerator();
-    RationalNumber newnum = new RationalNumber(newnume, newdeno);
-    return newnum;
+    RationalNumber thisval = multiply(other.reciprocal());
+    thisval.reduce();
+    return(thisval);
   }
 
   public int lcm(int a, int b){
