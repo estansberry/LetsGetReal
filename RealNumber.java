@@ -1,10 +1,11 @@
-public class RealNumber{
+public class RealNumber extends Number{
   public static void main(String args[]){
 
   }
   private double value;
 
   public RealNumber(double v){
+    super();
     value = v;
   }
 
@@ -16,17 +17,6 @@ public class RealNumber{
     return "" + getValue();
   }
 
-  public boolean equals(RealNumber other){
-    if(getValue() == 0 && other.getValue() == 0){
-      return true;
-    }if(getValue() == 0 || other.getValue() == 0){
-      return false;
-    }if(Math.abs((getValue() - other.getValue())/getValue()) <= 0.00001){
-      return true;
-    }else{
-      return false;
-  }
-}
 
   public RealNumber add(RealNumber other){
     RealNumber newval = new RealNumber(getValue() + other.getValue());
